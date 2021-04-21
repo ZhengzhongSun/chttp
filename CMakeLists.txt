@@ -1,7 +1,7 @@
 cmake_minimum_required (VERSION 2.8)
 project(chttp)
 
-set(HTTPS 1)
+set(HTTPS 0)
 
 #定义编译选项
 add_definitions("-Wall -ansi -g -std=c99 -DBUILD")

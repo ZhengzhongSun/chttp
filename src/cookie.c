@@ -53,7 +53,7 @@ int chttp_cookie_parse(chttp_cookie_t** head, const char* header)
 					k++)
 				;
 
-			/*如果key或者value的长度为0 表示cookie为空，那就进行下一次循环。*/
+			///*如果key或者value的长度为0 表示cookie为空，那就进行下一次循环。*/
 			if (0 == j || 0 == k)
 				continue;
 
@@ -125,7 +125,7 @@ char* chttp_cookie_tostring(chttp_cookie_t* head)
 	chttp_cookie_t *temp = head;
 	size_t len = 0;
 
-	/*计算cookie中内容的长度，为下面分配内存的长度*/
+	///*计算cookie中内容的长度，为下面分配内存的长度*/
 	while (temp != NULL)
 	{
 		/*添加 ; = 和空格 这3个字符的长度*/
@@ -202,7 +202,7 @@ static int _chttp_cookie_add(chttp_cookie_t** head, chttp_cookie_t* cookie)
 	if (cookie == NULL)
 		return 1;
 
-	/*如果头指针为NULL 表示是头结点，这也是前面为何必须要初始化为NULL的原因*/
+	///*如果头指针为NULL 表示是头结点，这也是前面为何必须要初始化为NULL的原因*/
 	if (temp == NULL)
 	{
 		*head = cookie;
@@ -212,11 +212,11 @@ static int _chttp_cookie_add(chttp_cookie_t** head, chttp_cookie_t* cookie)
 
 		for (; temp != NULL; temp = temp->next)
 		{
-			/*如果存在相同名称的cookie节点，就覆盖他*/
+			///*如果存在相同名称的cookie节点，就覆盖他*/
 			if (strcmp(temp->key, cookie->key) == 0)
 			{
 
-				/*保存这个同名的cookie节点指针，方便后面释放*/
+				///*保存这个同名的cookie节点指针，方便后面释放*/
 				chttp_cookie_t *t = temp;
 
 				/*把同名的节点的next指针赋值给新的节点的next指针*/
@@ -224,7 +224,7 @@ static int _chttp_cookie_add(chttp_cookie_t** head, chttp_cookie_t* cookie)
 				/*让同名节点的前面一个节点的next指针指向新的节点*/
 				prev->next = cookie;
 
-				/*释放以前的同名节点*/
+				///*释放以前的同名节点*/
 				free(t->key);
 				free(t->value);
 				free(t);

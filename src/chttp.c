@@ -103,7 +103,7 @@ static int _chttp_request(chttp_t *chttp)
 	chttp_str_free(html);
 	html = NULL;
 
-	/*如果下面两个中的其中一个值不为空，表示要获取cookie，就解析cookie保存到 chttp->cookies中*/
+	///*如果下面两个中的其中一个值不为空，表示要获取cookie，就解析cookie保存到 chttp->cookies中*/
 	if (chttp->cookie_str != NULL || chttp->cookies != NULL)
 	{
 		chttp_cookie_parse(&chttp->cookies, chttp->res_header->data);
@@ -126,14 +126,14 @@ void chttp_free(chttp_t *chttp)
 		chttp->sock = 0;
 	}
 
-	/*如果存在cookie  释放他*/
+	///*如果存在cookie  释放他*/
 	if (chttp->cookies)
 	{
 		chttp_cookie_free(chttp->cookies);
 		chttp->cookies = NULL;
 	}
 
-	/*如果主机名需要释放*/
+	///*如果主机名需要释放*/
 	if (chttp->host)
 	{
 		chttp_str_free(chttp->host);

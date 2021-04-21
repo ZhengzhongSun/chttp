@@ -7,7 +7,7 @@
 
 #include <chttp.h>
 
-/*如果定义了 DEBUG  就会显示出  请求头和返回头*/
+///*如果定义了 DEBUG  就会显示出  请求头和返回头*/
 #define DEBUG 1
 
 int main(int argc, char **argv)

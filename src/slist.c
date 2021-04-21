@@ -27,7 +27,7 @@ chttp_slist_t * chttp_slist_append(chttp_slist_t *list, const char *data)
 	}
 	else
 	{
-		/*找到最后一个节点,把新节点追加到最后*/
+		///*找到最后一个节点,把新节点追加到最后*/
 		for (temp = list; temp->next != NULL; temp = temp->next)
 			;
 		temp->next = node;
@@ -50,7 +50,7 @@ void chttp_slist_free_all(chttp_slist_t *list)
 
 		/*先释放节点中的变量data*/
 		free(temp->data);
-		/*再释放节点*/
+		///*再释放节点*/
 		free(temp);
 	}
 }

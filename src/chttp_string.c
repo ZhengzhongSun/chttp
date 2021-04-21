@@ -48,7 +48,7 @@ chttp_str_t *chttp_str_size_append(chttp_str_t *str, const char *cstr,
 		str->buf_size += len * 2;
 	}
 
-	/*把内容增加到缓冲区后面*/
+	///*把内容增加到缓冲区后面*/
 	memcpy(str->data+str->data_len, cstr, len);
 	str->data_len += len;
 
@@ -62,7 +62,7 @@ void chttp_str_reset(chttp_str_t *str)
 	memset(str->data, 0, str->buf_size);
 }
 
-/*释放字符串内存*/
+///*释放字符串内存*/
 void chttp_str_free(chttp_str_t *str)
 {
 	if (str)

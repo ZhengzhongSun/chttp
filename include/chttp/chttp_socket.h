@@ -32,6 +32,7 @@
 
 #if defined(WIN32)
 typedef SOCKET chttp_socket_t;
+#pragma comment(lib, "Ws2_32.lib")
 #else
 typedef int chttp_socket_t;
 #endif

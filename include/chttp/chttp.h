@@ -29,7 +29,7 @@ extern "C"
 
 typedef struct chttp_s chttp_t;
 
-/* 编译库的时候，导出函数，使用库的时候导入*/
+///* 编译库的时候，导出函数，使用库的时候导入*/
 #if defined(WIN32)
 #	if defined(BUILD)
 #		define CHTTP_API  __declspec(dllexport)
@@ -82,7 +82,7 @@ typedef enum
 	/*设置请求来路地址*/
 	CHTTP_OPT_REFER,
 
-	/*设置客户端信息*/
+	///*设置客户端信息*/
 	CHTTP_OPT_AGENT,
 
 	/*post提交的内容，char*类型 */
@@ -138,22 +138,22 @@ struct chttp_s
 	/*cookie字符串  请求的时候设置要提交的cookie，返回请求的时候存储返回的cookie*/
 	char *cookie_str;
 
-	/*post的时候要提交的数据*/
+	///*post的时候要提交的数据*/
 	char *postdata;
 
-	/*客户端信息*/
+	///*客户端信息*/
 	char *agent;
 
 	/*用户自定义请求头信息*/
 	chttp_slist_t *custom_header_list;
 
-	/*请求头指针*/
+	///*请求头指针*/
 	chttp_str_t *req_header;
 
-	/*返回的头部*/
+	///*返回的头部*/
 	chttp_str_t *res_header;
 
-	/*返回的内容部分*/
+	///*返回的内容部分*/
 	chttp_str_t *res_content;
 
 	/*存储错误信息*/
